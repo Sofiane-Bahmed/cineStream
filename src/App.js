@@ -7,6 +7,7 @@ import Navbar from "./components/Navigation";
 import { GlobalStyle, lightTheme, darkTheme } from "./darkMode"
 import { ThemeProvider } from 'styled-components';
 import moon  from "../src/assets/moon.png"
+import sun  from "../src/assets/sun.png"
 
 
 const API_URL = 'http://www.omdbapi.com?apikey=c032e2d7'
@@ -22,6 +23,7 @@ const App = () => {
     const [movies, setMovies] = useState([])
     const [searchTerm, setSearchTerm] = useState('')
     const [theme, setTheme] = useState('light')
+    const [toggle, setToggle] = useState(false)
 
     const SearchMovie = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`)
@@ -45,7 +47,10 @@ const App = () => {
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <>
                 <GlobalStyle />
-                <button onClick={toggleTheme}><img className="moon" src= {moon}/>  </button>
+                <button onClick={toggleTheme}><img className="moon"
+                 src= {toggle ? sun : moon}
+                 onClick={()=>setToggle(!toggle)}/> 
+                  </button>
                 <div className="app">
                     <h1 >CineStream</h1>
                     <div className="search">
