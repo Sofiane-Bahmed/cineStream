@@ -20,4 +20,5 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
  export const darkTheme = {
   body: '#212426',
   text: '#FAFAFA',
+
 };

@@ -4,7 +4,6 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import logo  from "../assets/yellowLogo.png"
-import moon  from "../assets/moon.png"
 import profile  from "../assets/sof.png"
 import  "../index.css"
 
@@ -22,7 +21,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-[#1f2123] ">
+    <Disclosure as="nav" className="bg-[#1f2123]  ">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

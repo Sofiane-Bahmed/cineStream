@@ -6,8 +6,8 @@ import MovieCard from './movieCard'
 import Navbar from "./components/Navigation";
 import { GlobalStyle, lightTheme, darkTheme } from "./darkMode"
 import { ThemeProvider } from 'styled-components';
-import moon  from "../src/assets/moon.png"
-import sun  from "../src/assets/sun.png"
+import moon from "../src/assets/moon.png"
+import sun from "../src/assets/sun.png"
 
 
 const API_URL = 'http://www.omdbapi.com?apikey=c032e2d7'
@@ -32,7 +32,7 @@ const App = () => {
 
     }
     useEffect(() => {
-        SearchMovie('batman');
+        SearchMovie('avengers');
     }, [])
 
     const toggleTheme = () => {
@@ -47,10 +47,11 @@ const App = () => {
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <>
                 <GlobalStyle />
+
                 <button onClick={toggleTheme}><img className="moon"
-                 src= {toggle ? sun : moon}
-                 onClick={()=>setToggle(!toggle)}/> 
-                  </button>
+                    src={toggle ? sun : moon}
+                    onClick={() => setToggle(!toggle)} />
+                </button>
                 <div className="app">
                     <h1 >CineStream</h1>
                     <div className="search">

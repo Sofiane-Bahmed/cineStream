@@ -4,6 +4,8 @@ import "./index.css"
 
 import App from './App'
 import Navbar from './components/Navigation'
+import Footer from './components/footer/footer'
+
 import  './components/Navigation'
 import {ThemeProvider } from 'styled-components';
 
@@ -13,6 +15,7 @@ const app = (
   <React.StrictMode>
     <Navbar/>
     <App />
+    <Footer/>
   </React.StrictMode>
 );
 
