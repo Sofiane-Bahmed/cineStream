@@ -4,10 +4,9 @@ import './App.css'
 import searchIcon from './search.svg'
 import MovieCard from './movieCard'
 import Navbar from "./components/Navigation";
+import Footer from "./components/footer/footer";
 import { GlobalStyle, lightTheme, darkTheme } from "./darkMode"
 import { ThemeProvider } from 'styled-components';
-import moon from "../src/assets/moon.png"
-import sun from "../src/assets/sun.png"
 
 
 const API_URL = 'http://www.omdbapi.com?apikey=c032e2d7'
@@ -38,8 +37,10 @@ const App = () => {
     const toggleTheme = () => {
         if (theme === 'light') {
             setTheme('dark');
+            setToggle(true);
         } else {
             setTheme('light');
+            setToggle(false);
         }
     };
 
@@ -47,11 +48,8 @@ const App = () => {
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <>
                 <GlobalStyle />
-
-                <button onClick={toggleTheme}><img className="moon"
-                    src={toggle ? sun : moon}
-                    onClick={() => setToggle(!toggle)} />
-                </button>
+                <Navbar theme={theme} toggleTheme={toggleTheme} toggle={toggle} />
+                
                 <div className="app">
                     <h1 >CineStream</h1>
                     <div className="search">
@@ -62,7 +60,7 @@ const App = () => {
                         />
                         <img
                             src={searchIcon}
-                            alt="serch"
+                            alt="search"
                             onClick={() => SearchMovie(searchTerm)}
                         />
                     </div>
@@ -81,6 +79,7 @@ const App = () => {
                                 </div>
                             )}
                 </div>
+                <Footer />
             </>
         </ThemeProvider>
     );

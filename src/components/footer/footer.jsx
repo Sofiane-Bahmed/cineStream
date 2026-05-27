@@ -14,69 +14,41 @@ import {
 const Footer = () => {
   return (
     <Box>
-      <h1 style={{ color: "green", 
-                   textAlign: "center", 
-                   marginTop: "-50px" }}>
-        
-      </h1>
       <Container>
         <Row>
         <Column>
-            
-               <img src={Logo2} /><br />
-               <p>Lorem Ipsum is simply dummy text of the printing and 
-                typesetting industry  typesetting industry  </p>
+            <img src={Logo2} style={{ width: "150px" }} alt="CineStream Logo" /><br />
+            <p style={{ color: "inherit", opacity: 0.7 }}>
+              Your ultimate destination for discovering the latest movies and all-time classics. Stream your passion with CineStream.
+            </p>
           </Column>
           <Column>
-            <Heading>About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
+            <Heading>Explore</Heading>
+            <FooterLink href="#">Movies</FooterLink>
+            <FooterLink href="#">TV Shows</FooterLink>
+            <FooterLink href="#">Actors</FooterLink>
+            <FooterLink href="#">Awards</FooterLink>
           </Column>
           <Column>
-            <Heading>Services</Heading>
-            <FooterLink href="#">Writing</FooterLink>
-            <FooterLink href="#">Internships</FooterLink>
-            <FooterLink href="#">Coding</FooterLink>
-            <FooterLink href="#">Teaching</FooterLink>
+            <Heading>Genres</Heading>
+            <FooterLink href="#">Action</FooterLink>
+            <FooterLink href="#">Comedy</FooterLink>
+            <FooterLink href="#">Drama</FooterLink>
+            <FooterLink href="#">Horror</FooterLink>
           </Column>
           <Column>
-            <Heading>Contact Us</Heading>
-            <FooterLink href="#">Uttar Pradesh</FooterLink>
-            <FooterLink href="#">Ahemdabad</FooterLink>
-            <FooterLink href="#">Indore</FooterLink>
-            <FooterLink href="#">Mumbai</FooterLink>
+            <Heading>Support</Heading>
+            <FooterLink href="#">Help Center</FooterLink>
+            <FooterLink href="#">Privacy Policy</FooterLink>
+            <FooterLink href="#">Terms of Use</FooterLink>
+            <FooterLink href="#">Contact Us</FooterLink>
           </Column>
           <Column>
-            <Heading>Social Media</Heading>
-            <FooterLink href="#">
-              <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: "10px" }}>
-                  Facebook
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-instagram">
-                <span style={{ marginLeft: "10px" }}>
-                  Instagram
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-twitter">
-                <span style={{ marginLeft: "10px" }}>
-                  Twitter
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>
-                  Youtube
-                </span>
-              </i>
-            </FooterLink>
+            <Heading>Social</Heading>
+            <FooterLink href="#">Facebook</FooterLink>
+            <FooterLink href="#">Instagram</FooterLink>
+            <FooterLink href="#">Twitter</FooterLink>
+            <FooterLink href="#">YouTube</FooterLink>
           </Column>
         </Row>
       </Container>

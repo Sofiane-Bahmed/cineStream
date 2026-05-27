@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Box = styled.div`
   padding: 80px 60px;
-  background: #f9d3b4;
+  background: ${({ theme }) => theme.footerBg};
   margin-top: 50px;
+  transition: background 0.5s ease;
 
   @media (max-width: 1000px) {
     padding: 70px 30px;
@@ -16,7 +17,6 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   margin: 0 auto;
-  // background: red;
 `;
 
 export const Column = styled.div`
@@ -37,20 +37,22 @@ export const Row = styled.div`
 `;
 
 export const FooterLink = styled.a`
-  color: black;
+  color: ${({ theme }) => theme.footerText};
   margin-bottom: 20px;
   font-size: 18px;
   text-decoration: none;
+  opacity: 0.8;
 
   &:hover {
-    color: red;
+    color: #ff8a00;
+    opacity: 1;
     transition: 200ms ease-in;
   }
 `;
 
 export const Heading = styled.p`
   font-size: 24px;
-  color: black;
+  color: ${({ theme }) => theme.footerText};
   margin-bottom: 40px;
   font-weight: bold;
 `;

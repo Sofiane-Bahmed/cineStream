@@ -1,10 +1,11 @@
 
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import logo  from "../assets/yellowLogo.png"
-import profile  from "../assets/sof.png"
+import moon from "../assets/moon.png"
+import sun from "../assets/sun.png"
 import  "../index.css"
 
 
@@ -19,9 +20,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+export default function Navbar({ theme, toggleTheme, toggle }) {
   return (
-    <Disclosure as="nav" className="bg-[#1f2123]  ">
+    <Disclosure as="nav" className="transition-colors duration-500">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -42,12 +43,12 @@ export default function Navbar() {
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src= { logo }
-                    alt="Your Company"
+                    alt="CineStream"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
                     src= { logo }
-                    alt="Your Company"
+                    alt="CineStream"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -57,8 +58,8 @@ export default function Navbar() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
+                          item.current ? 'bg-gray-900 text-white' : (theme === 'dark' ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-gray-700 hover:bg-gray-200 hover:text-gray-900'),
+                          'rounded-md px-3 py-2 text-sm font-medium transition-colors'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -69,12 +70,17 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                
+                {/* Theme Switcher */}
+                <button 
+                  onClick={toggleTheme}
+                  className="rounded-full p-1 text-gray-400 hover:text-white focus:outline-none transition-transform active:scale-95"
                 >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <img 
+                    className="h-8 w-8"
+                    src={toggle ? sun : moon} 
+                    alt="theme toggle"
+                  />
                 </button>
 
                 {/* Profile dropdown */}
@@ -82,14 +88,9 @@ export default function Navbar() {
                 <Menu as="div" className="relative ml-3">
                
                   <div>
-                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 overflow-hidden">
                       <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src={profile}
-                        alt=""
-                      />
-                    
+                      <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-yellow-400 to-orange-600" />
                     </Menu.Button>
                     
                   </div>
@@ -137,9 +138,6 @@ export default function Navbar() {
                     </Menu.Items>
                   </Transition>
                 </Menu>
-                {/* <img src={moon} 
-                          className="h-8 w-8 flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800  "
-                      /> */}
               </div>
             </div>
           </div>
@@ -152,7 +150,7 @@ export default function Navbar() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : (theme === 'dark' ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-gray-700 hover:bg-gray-200 hover:text-gray-900'),
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
@@ -167,3 +165,4 @@ export default function Navbar() {
     </Disclosure>
   )
 }
+
