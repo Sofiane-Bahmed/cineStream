@@ -10,10 +10,10 @@ import  "../index.css"
 
 
 const navigation = [
-  { name: 'HOME', href: '', current: true },
-  { name: 'MOVIES', href: '#', current: false },
-  { name: 'ABOUT', href: '#', current: false },
-  { name: 'CONTACT', href: '#', current: false },
+  { name: 'HOME', href: '#!', current: true },
+  { name: 'MOVIES', href: '#!', current: false },
+  { name: 'ABOUT', href: '#!', current: false },
+  { name: 'CONTACT', href: '#!', current: false },
 ]
 
 function classNames(...classes) {
@@ -108,7 +108,7 @@ export default function Navbar({ theme, toggleTheme, toggle }) {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="#!"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
@@ -118,7 +118,7 @@ export default function Navbar({ theme, toggleTheme, toggle }) {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="#!"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Settings
@@ -128,7 +128,7 @@ export default function Navbar({ theme, toggleTheme, toggle }) {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="#!"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out

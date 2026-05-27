@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 
 

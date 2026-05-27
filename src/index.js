@@ -3,10 +3,8 @@ import ReactDOM from "react-dom/client"
 import "./index.css"
 
 import App from './App'
-import Footer from './components/footer/footer'
 
 import  './components/Navigation'
-import {ThemeProvider } from 'styled-components';
 
 
 const rootElement = document.getElementById('root');
