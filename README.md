@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# CineStream 🎬
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React Version](https://img.shields.io/badge/react-%5E18.2.0-blue)](https://reactjs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-## Available Scripts
+**CineStream** is a modern, responsive movie discovery application built with React. It leverages the OMDB API to provide users with a seamless experience for searching and exploring their favorite films.
 
-In the project directory, you can run:
+## 🌟 Features
 
-### `npm start`
+-   **Instant Search:** Quickly find movies by title using the OMDB API integration.
+-   **Deep Insights:** View comprehensive details for every movie, including plot summaries, directors, cast, and IMDB ratings.
+-   **Dynamic Theming:** Seamlessly toggle between Light and Dark modes for a comfortable viewing experience in any environment.
+-   **Fully Responsive:** A "mobile-first" design approach ensures the app looks great on desktops, tablets, and smartphones.
+-   **Modern Stack:** Built using React 18, React Router 6, and Styled Components for a robust and maintainable codebase.
 
-Runs the app in the development mode.\
+---
+
+## 🚀 Installation
+
+### Prerequisites
+
+-   [Node.js](https://nodejs.org/) (v14.0.0 or higher recommended)
+-   [npm](https://www.npmjs.com/) (usually comes with Node.js)
+
+### Step-by-Step Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/cine-stream.git
+    cd cine-stream
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Verification:**
+    Ensure all packages are installed correctly by checking the `node_modules` folder.
+
+---
+
+## ⚡ Quick Start
+
+To run the application in development mode:
+
+```bash
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Basic Usage
 
-### `npm test`
+1.  Enter a movie title (e.g., "Inception") in the search bar.
+2.  Click the search icon or press Enter.
+3.  Click on any movie card to view detailed information.
+4.  Use the theme toggle in the navigation bar to switch between Light and Dark modes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Configuration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application uses the [OMDB API](http://www.omdbapi.com/). 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### API Key
+Currently, a demo API key is hardcoded in `App.js` and `MovieDetails.jsx`. For production use, it is recommended to use an environment variable:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Create a `.env` file in the root directory.
+2. Add your API key: `REACT_APP_OMDB_API_KEY=your_key_here`.
+3. Update the `API_URL` constants to use `process.env.REACT_APP_OMDB_API_KEY`.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠️ Development
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Available Scripts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   `npm start`: Runs the app in development mode.
+-   `npm run build`: Builds the app for production to the `build` folder.
+-   `npm test`: Launches the test runner.
+-   `npm run lint`: (If configured) Checks for code style issues.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🧪 Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The project uses Jest and React Testing Library for unit testing.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run the tests:
+```bash
+npm test
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🏆 Acknowledgments
 
-### Analyzing the Bundle Size
+-   [OMDB API](http://www.omdbapi.com/) for the movie data.
+-   [Styled Components](https://styled-components.com/) for the dynamic theming system.
+-   [React Icons](https://react-icons.github.io/react-icons/) for the UI elements.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
