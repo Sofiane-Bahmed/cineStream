@@ -1,7 +1,6 @@
 # CineStream 🎬
 
 [![React Version](https://img.shields.io/badge/react-%5E18.2.0-blue)](https://reactjs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 **CineStream** is a modern, responsive movie discovery application built with React. It leverages the OMDB API to provide users with a seamless experience for searching and exploring their favorite films.
@@ -65,7 +64,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The application uses the [OMDB API](http://www.omdbapi.com/). 
 
 ### API Key
-Currently, a demo API key is hardcoded in `App.js` and `MovieDetails.jsx`. For production use, it is recommended to use an environment variable:
+Currently, a demo API key is hardcoded in `index.js` at constants folder. For production use, it is recommended to use an environment variable:
 
 1. Create a `.env` file in the root directory.
 2. Add your API key: `REACT_APP_OMDB_API_KEY=your_key_here`.
@@ -81,17 +80,6 @@ Currently, a demo API key is hardcoded in `App.js` and `MovieDetails.jsx`. For p
 -   `npm run build`: Builds the app for production to the `build` folder.
 -   `npm test`: Launches the test runner.
 -   `npm run lint`: (If configured) Checks for code style issues.
-
----
-
-## 🧪 Testing
-
-The project uses Jest and React Testing Library for unit testing.
-
-To run the tests:
-```bash
-npm test
-```
 
 ---
 

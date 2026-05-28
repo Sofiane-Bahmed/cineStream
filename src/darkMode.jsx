@@ -29,8 +29,16 @@ import { createGlobalStyle } from 'styled-components';
     -webkit-text-fill-color: transparent !important;
   }
 
+  .movie div:nth-of-type(1) {
+    color: ${({ theme }) => theme.movieYear} !important;
+  }
+
   .movie div:nth-of-type(3) {
     background-color: ${({ theme }) => theme.movieCardBg} !important;
+  }
+
+  .movie div:nth-of-type(3) span {
+    color: ${({ theme }) => theme.movieType} !important;
   }
 
   .movie div:nth-of-type(3) h3 {
@@ -52,6 +60,8 @@ import { createGlobalStyle } from 'styled-components';
   h1Gradient: 'linear-gradient(90deg, #ff8a00 0%, #e52e71 100%)',
   movieCardBg: '#ffffff',
   movieTitle: '#ff8a00',
+  movieYear: '#e52e71',
+  movieType: '#363537',
   footerBg: '#f9d3b4',
   footerText: '#333'
 };
@@ -66,6 +76,8 @@ import { createGlobalStyle } from 'styled-components';
   h1Gradient: 'linear-gradient(90deg, #f9d3b4 0%, #ff8a00 100%)',
   movieCardBg: '#343739',
   movieTitle: '#f9d3b4',
+  movieYear: '#f9d3b4',
+  movieType: '#f0f0f0',
   footerBg: '#1a1c1e',
   footerText: '#FAFAFA'
 };

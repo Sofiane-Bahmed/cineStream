@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const API_URL = 'http://www.omdbapi.com?apikey=c032e2d7';
+import { API_URL } from "../constants/index";
 
 const DetailsContainer = styled.div`
   padding: 4rem;

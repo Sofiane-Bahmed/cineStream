@@ -1,17 +1,22 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from 'styled-components';
+
 import './App.css'
+
 import searchIcon from './search.svg'
 import MovieCard from './components/movieCard'
 import Navbar from "./components/Navigation";
 import Footer from "./components/footer/footer";
 import MovieDetails from "./components/MovieDetails";
-import { GlobalStyle, lightTheme, darkTheme } from "./darkMode"
-import { ThemeProvider } from 'styled-components';
+import {
+    GlobalStyle,
+    lightTheme,
+    darkTheme
+} from "./darkMode"
+import { API_URL } from "./constants/index";
 
-
-const API_URL = 'http://www.omdbapi.com?apikey=c032e2d7'
 
 const Home = ({ movies, searchTerm, setSearchTerm, SearchMovie }) => (
     <div className="app">
@@ -21,6 +26,11 @@ const Home = ({ movies, searchTerm, setSearchTerm, SearchMovie }) => (
                 placeholder="search for movies"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        SearchMovie(searchTerm);
+                    }
+                }}
             />
             <img
                 src={searchIcon}
@@ -87,5 +97,4 @@ const App = () => {
 };
 
 
-export default App 
- 
+export default App
